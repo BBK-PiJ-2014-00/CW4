@@ -10,7 +10,7 @@ import contactManager.Contact;
 /**
  * Unit test to test the ContactImpl class.
  * 
- * @author ttadde01
+ * @Author ttadde01
  *
  */
 public class UnitTestContact {
@@ -18,22 +18,22 @@ public class UnitTestContact {
 	/**
 	 * Array of int used to represent id of contacts
 	 */
-	private int[] id = {1,2,3};
+	private int[] id = {1,2};
 
 	/**
 	 * Array of Contact used for testing..
 	 */
-	private Contact[] contact = new Contact[3];
+	private Contact[] contact = new Contact[2];
 	
 	/**
 	 * Array of String used to represent name of contacts.
 	 */
-	private String[] name = {"Contact name1", "Contact name2", "Contact name3"};
+	private String[] name = {"Contact name1", "Contact name2"};
 	
 	/**
 	 * Array of String used to represent notes on contacts.
 	 */
-	private String[] notes = {"Notes on contact 1", "Notes on contact2", ""};
+	private String[] notes = {"Notes on contact 1",  ""};
 	
 	/**
 	 * Initialise array of Contact.
@@ -41,8 +41,7 @@ public class UnitTestContact {
 	@Before
 	public void before() {
 		this.contact[0] = new ContactImpl(this.id[0],this.name[0],this.notes[0]);
-		this.contact[1] = new ContactImpl(this.id[1], this.name[1],this.notes[1]);
-		this.contact[2] = new ContactImpl(this.id[2], this.name[2]);
+		this.contact[1] = new ContactImpl(this.id[1], this.name[1]);
 	}
 	
 	/**
@@ -50,10 +49,9 @@ public class UnitTestContact {
 	 */
 	@Test
 	public void testGetID() {
-		String returnedID = contact[0].getName();
+		int returnedID = contact[0].getId();
 		assertEquals(name[0], returnedID);
-	}
-	
+	}	
 	
 	/**
 	 * Test getName of Contact class implementation.
@@ -78,7 +76,7 @@ public class UnitTestContact {
 	 */
 	@Test
 	public void testContactWithEmptyNotes() {
-		String foundNotes = contact[4].getNotes();
+		String foundNotes = contact[1].getNotes();
 		assertEquals("", foundNotes);
 	}
 }
