@@ -10,7 +10,7 @@ import contactManager.Contact;
 /**
  * Unit test to test the ContactImpl class.
  * 
- * @author Vasco
+ * @author ttadde01
  *
  */
 public class UnitTestContact {
@@ -74,7 +74,7 @@ public class UnitTestContact {
 	}
 	
 	/**
-	 * Test that the notes are empty.
+	 * Test note with empty notes ie "".
 	 */
 	@Test
 	public void testContactWithEmptyNotes() {
