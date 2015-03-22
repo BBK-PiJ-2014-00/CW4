@@ -1,6 +1,6 @@
 package unitTests;
 
-import utility.*;
+import contactManager.*;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -51,7 +51,7 @@ public class JUnitTestContact {
 	@Test
 	public void testGetID() {
 		int returnedID = contact[0].getId();
-		assertEquals(name[0], returnedID);
+		assertEquals(id[0], returnedID);
 	}	
 	
 	/**
