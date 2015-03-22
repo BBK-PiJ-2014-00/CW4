@@ -25,7 +25,7 @@ public class JUnitTestPastMeeting {
     /**
      * An Array of String used to store date.
      */
-    private Calendar[] date = new Calendar[2];
+    private Calendar[] date = new Calendar[4];
 	
 	/**
      * An Array of String used to store notes.
@@ -45,14 +45,10 @@ public class JUnitTestPastMeeting {
     @Before
     public void before() {
         // Initialise date
-    	for(Calendar d: date){
-        	d = new GregorianCalendar();
+    	for(int i = 0 ; i < date.length; i++){
+        	date[i] = new GregorianCalendar(2015, 03, 22 -1, 9, 30, 00);
     	}
-        date[0].set(2015, 03, 22, 9, 30, 00);
-        date[1].set(2015, 03, 21, 9, 30, 00);
-        date[2].set(2015, 03, 20, 9, 30, 00);
-        date[3].set(2015, 03, 19, 9, 30, 00);
-
+        
         // Initilise contacts
         contactList = new HashSet<Contact>();
         contactList.add(new ContactImpl(0, "First contact", notes[0]));
@@ -69,7 +65,8 @@ public class JUnitTestPastMeeting {
     @Test
     public void testGetId() {
         int returndId = pastMeeting[0].getId();
-        assertEquals(returndId, id[0]);
+        System.out.println("return id = " + returndId);
+        assertEquals(id[0], returndId);
     }
 
     /**
