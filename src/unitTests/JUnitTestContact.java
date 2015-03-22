@@ -1,5 +1,6 @@
 package unitTests;
 
+import utility.*;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -13,7 +14,7 @@ import contactManager.Contact;
  * @Author ttadde01
  *
  */
-public class JunitTestContact {
+public class JUnitTestContact {
 	
 	/**
 	 * Array of int used to represent id of contacts
