@@ -24,7 +24,7 @@ public class JUnitTestContact {
 	/**
 	 * Array of Contact used for testing..
 	 */
-	private Contact[] contact = new Contact[2];
+	private ContactImpl[] contact = new ContactImpl[2];
 	
 	/**
 	 * Array of String used to represent name of contacts.
@@ -49,10 +49,20 @@ public class JUnitTestContact {
 	 * Test getID of Contact class implementation.
 	 */
 	@Test
-	public void testGetID() {
+	public void testGetId() {
 		int returnedID = contact[0].getId();
 		assertEquals(id[0], returnedID);
-	}	
+	}
+	
+	/**
+	 * Test setID of Contact class implementation.
+	 */
+	@Test
+	public void testSetId() {
+		contact[0].setId(10);
+		int returnedID = contact[0].getId();
+		assertEquals(returnedID, 10);
+	}
 	
 	/**
 	 * Test getName of Contact class implementation.
@@ -61,6 +71,16 @@ public class JUnitTestContact {
 	public void testGetName() {
 		String returnedName = contact[0].getName();
 		assertEquals(name[0], returnedName);
+	}
+	
+	/**
+	 * Test setName of Contact class implementation.
+	 */
+	@Test
+	public void testSetName() {
+		contact[0].setName("New Name1");
+		String returnedName = contact[0].getName();
+		assertEquals(returnedName, "New Name1");
 	}
 	
 	/**
@@ -73,7 +93,17 @@ public class JUnitTestContact {
 	}
 	
 	/**
-	 * Test note with empty notes ie "".
+	 * Test setNotes of Contact class implementation.
+	 */
+	@Test
+	public void testSetNotes() {
+		contact[0].setNotes("New note1");
+		String returnedNotes = contact[0].getNotes();
+		assertEquals(returnedNotes, "New note1");
+	}
+	
+	/**
+	 * Test Contact constractor with empty notes ie "".
 	 */
 	@Test
 	public void testContactWithEmptyNotes() {
